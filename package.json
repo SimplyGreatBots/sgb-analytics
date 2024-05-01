@@ -1,6 +1,6 @@
 {
-  "name": "analytics",
-  "integrationName": "simplygreatanalytics/analytics",
+  "name": "segment",
+  "integrationName": "simplygreatanalytics/segment",
   "scripts": {
     "type:check": "tsc --noEmit",
     "version": "bp --version",
