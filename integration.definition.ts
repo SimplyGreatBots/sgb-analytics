@@ -6,6 +6,8 @@ export default new IntegrationDefinition({
   name: integrationName ?? name,
   icon:  'icon.svg',
   version: '0.2.0',
+  description: 'Integrate Segment with Botpress',
+  readme: 'hub.md',
   channels: {},
   configuration: {
     schema: z.object({
