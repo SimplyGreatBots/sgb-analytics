@@ -5,7 +5,7 @@ import z from 'zod'
 export default new IntegrationDefinition({
   name: integrationName ?? name,
   icon:  'icon.svg',
-  version: '0.2.0',
+  version: '0.2.1',
   channels: {},
   configuration: {
     schema: z.object({
