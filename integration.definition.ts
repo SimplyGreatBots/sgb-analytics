@@ -5,7 +5,9 @@ import z from 'zod'
 export default new IntegrationDefinition({
   name: integrationName ?? name,
   icon:  'icon.svg',
-  version: '0.2.1',
+  version: '0.2.2',
+  description: 'Integrate Segment with Botpress',
+  readme: 'hub.md',
   channels: {},
   configuration: {
     schema: z.object({
