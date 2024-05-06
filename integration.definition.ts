@@ -29,10 +29,7 @@ export default new IntegrationDefinition({
         }),
       },
       output: {
-        schema: z.object({
-          success: z.boolean().describe('Whether the user profile was successfully updated'),
-          log: z.string().describe('Log message'),
-        }),
+        schema: z.object({}),
       },
     },
     trackNode: {
@@ -45,10 +42,7 @@ export default new IntegrationDefinition({
         }),
       },
       output: {
-        schema: z.object({
-          success: z.boolean().describe('Whether the node was successfully tracked'),
-          log: z.string().describe('Log message'),
-        }),
+        schema: z.object({}),
       },
     },
     trackEvent: {
@@ -65,10 +59,7 @@ export default new IntegrationDefinition({
         }),
       },
       output: {
-        schema: z.object({
-          success: z.boolean().describe('Whether the event was successfully tracked'),
-          log: z.string().describe('Log message'),
-        }),
+        schema: z.object({}),
       },
     },
   },
