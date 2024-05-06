@@ -1,12 +1,45 @@
 import * as botpress from '.botpress'
-import Analytics from 'analytics-node';
+import Analytics from 'analytics-node'
+import * as bpclient from '@botpress/client'
+import axios from 'axios'
 
 type updateUserProfileOutput = botpress.actions.updateUserProfile.output.Output
 type trackNodeOutput = botpress.actions.trackNode.output.Output
 type trackEventOutput = botpress.actions.trackEvent.output.Output
 
 export default new botpress.Integration({
-  register: async () => {},
+  register: async ({ ctx }) => {
+    // check if key is valid
+
+    if (!ctx.configuration.writeKey) {
+      throw new bpclient.RuntimeError(
+        'Configuration Error! The Segment is not set. Please set it in your bot integration configuration.'
+      )
+    }
+
+    try {
+      await axios.request({
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'https://api.segment.io/v1/identify',
+        headers: {
+          Authorization: `Bearer ${ctx.configuration.writeKey}`,
+          'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({
+          userId: '1',
+          traits: {
+            ignore: true,
+            name: 'Test User'
+          }
+        })
+      })
+    } catch (error) {
+      throw new bpclient.RuntimeError(
+        'Configuration Error! The Segment is not set. Please set it in your bot integration configuration.'
+      )
+    }
+  },
   unregister: async () => {},
   actions: {
     updateUserProfile: async (args): Promise<updateUserProfileOutput> => {
