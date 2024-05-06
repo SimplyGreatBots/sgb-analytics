@@ -6,8 +6,8 @@ export default new IntegrationDefinition({
   name: integrationName ?? name,
   icon: 'icon.svg',
   title: 'Segment',
-  version: '0.2.2',
-  description: 'Integrate Segment with Botpress',
+  version: '0.2.3',
+  description: 'Track Botpress Analytics events in Segment',
   readme: 'hub.md',
   channels: {},
   configuration: {
