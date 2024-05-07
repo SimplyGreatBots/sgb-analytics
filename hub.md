@@ -19,17 +19,14 @@ These actions are backed by the Segment Analytics API, utilizing a write key to 
 - **Update User Profile**
   - Updates identifying information of a user's profile in Segment Analytics.
   - Inputs: User ID, User Profile (optional JSON string of user metadata)
-  - Outputs: Success status, Log message
 
 - **Track Node**
   - Tracks when a node has been triggered within the bot.
   - Inputs: User ID, Node ID
-  - Outputs: Success status, Log message
 
 - **Track Event**
   - Tracks a custom event and associated properties in Segment Analytics.
   - Inputs: User ID, Event Name, Event Payload (optional JSON string of event properties)
-  - Outputs: Success status, Log message
 
 ### Configuration
 

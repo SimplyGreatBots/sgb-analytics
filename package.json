@@ -1,13 +1,14 @@
 {
   "name": "segment",
-  "integrationName": "simplygreatanalytics/segment",
+  "integrationName": "plus/segment",
   "scripts": {
     "type:check": "tsc --noEmit",
     "version": "bp --version",
     "login": "bp login",
-    "dev": "bp dev",
+    "dev": "nodemon --watch \"./src/*\" --ext \"ts\" --exec \"bp deploy -y\"",
     "gen": "bp gen",
-    "deploy": "bp deploy"
+    "deploy": "bp deploy",
+    "postinstall": "bp build"
   },
   "keywords": [],
   "private": true,
@@ -18,11 +19,13 @@
     "@botpress/sdk": "0.6.15",
     "analytics": "^0.8.11",
     "analytics-node": "^6.2.0",
+    "axios": "^1.6.8",
     "zod": "^3.20.6"
   },
   "devDependencies": {
     "@types/analytics-node": "^3.1.14",
     "@types/node": "^18.11.17",
+    "nodemon": "^3.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   }
