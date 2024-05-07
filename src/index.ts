@@ -13,7 +13,7 @@ export default new botpress.Integration({
 
     if (!ctx.configuration.writeKey) {
       throw new bpclient.RuntimeError(
-        'Configuration Error! The Segment is not set. Please set it in your bot integration configuration.',
+        'Configuration Error! The Segment write key is not set. Please set it in your bot integration configuration.',
       )
     }
 
@@ -36,7 +36,7 @@ export default new botpress.Integration({
       })
     } catch (error) {
       throw new bpclient.RuntimeError(
-        'Configuration Error! The Segment is not set. Please set it in your bot integration configuration.',
+        'Configuration Error! The Segment write key is not set. Please set it in your bot integration configuration.',
       )
     }
   },
